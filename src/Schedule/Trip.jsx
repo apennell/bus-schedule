@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
+  handleSelectTrip: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired,
   trip: PropTypes.shape({
     id: PropTypes.number.isRequired,
     startTime: PropTypes.number.isRequired,
@@ -9,9 +11,23 @@ const propTypes = {
   }).isRequired,
 };
 
-const Trip = ({ trip: { id, startTime, endTime } }) => (
-  <div className="trip">{id}</div>
-);
+const Trip = ({ handleSelectTrip, selected, trip: { id, startTime, endTime } }) => {
+  const style = {
+    left: `${startTime}px`,
+    width: `${endTime - startTime}px`,
+  };
+  const tripClass = `trip${selected ? ' active' : ''}`;
+
+  return (
+    <div
+      onClick={() => handleSelectTrip(selected ? null : id)}
+      className={tripClass}
+      style ={style}
+    >
+      {id}
+    </div>
+  );
+};
 
 Trip.propTypes = propTypes;
  

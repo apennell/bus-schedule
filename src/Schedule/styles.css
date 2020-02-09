@@ -7,15 +7,25 @@
 .bus {
   border-bottom: 1px solid #9a9a9a;
   display: inline-block;
-  min-height: 52px;
+  min-height: 42px;
   width: 100%;
 }
 
 .trip {
   border: 1px solid #404040;
-  height: 30px;
-  line-height: 30px;
-  margin: 10px;
+  height: 25px;
+  line-height: 25px;
+  margin: 10px 0;
+  position: relative;
   text-align: center;
   width: 70px;
+}
+
+.trip:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.trip.active {
+  background-color: #d1d1d1;
 }
