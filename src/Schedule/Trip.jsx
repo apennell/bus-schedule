@@ -19,11 +19,7 @@ const Trip = ({ handleSelectTrip, selected, trip: { id, startTime, endTime } }) 
   const tripClass = `trip${selected ? ' active' : ''}`;
 
   return (
-    <div
-      onClick={() => handleSelectTrip(selected ? null : id)}
-      className={tripClass}
-      style ={style}
-    >
+    <div onClick={(e) => handleSelectTrip(e, id)} className={tripClass} style ={style}>
       {id}
     </div>
   );

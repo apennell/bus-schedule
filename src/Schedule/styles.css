@@ -5,20 +5,31 @@
 }
 
 .bus {
-  border-bottom: 1px solid #9a9a9a;
-  display: inline-block;
-  min-height: 42px;
+  border-bottom: 1px solid #b5b5b5;
+  display: inline-flex;
+  margin-top: -3px;
+  min-height: 40px;
+  position: relative;
   width: 100%;
 }
 
+.bus:nth-child(even) {
+  background-color: #f9f7f7;
+}
+
+.bus.active:hover {
+  cursor: pointer;
+}
+
 .trip {
+  align-self: center;
+  background-color: #ffffff;
   border: 1px solid #404040;
+  display: inline-block;
   height: 25px;
   line-height: 25px;
-  margin: 10px 0;
-  position: relative;
+  position: absolute;
   text-align: center;
-  width: 70px;
 }
 
 .trip:hover {

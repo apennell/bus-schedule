@@ -4,26 +4,31 @@ import PropTypes from 'prop-types';
 import Trip from './Trip';
 
 const propTypes = {
-  handleSelectTrip: PropTypes.func.isRequired,
-  trip: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    startTime: PropTypes.number.isRequired,
-    endTime: PropTypes.number.isRequired,
-  }).isRequired,
-  selectedTrip: PropTypes.number,
+  busTrips: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    startTime: PropTypes.number,
+    endTime: PropTypes.number,
+  })).isRequired,
+  handleSelectBus: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  handleSelectTrip: PropTypes.func,
+  selectedTripId: PropTypes.number,
 };
 
 const defaultProps = {
-  selectedTrip: null,
+  selectedTripId: null,
 };
 
-const Bus = ({ handleSelectTrip, selectedTrip, trip }) => (
-  <div className="bus">  
-    <Trip 
-      handleSelectTrip={handleSelectTrip}
-      selected={trip.id === selectedTrip}
-      trip={trip}
-    />
+const Bus = ({ busTrips, index, handleSelectBus, handleSelectTrip, selectedTripId }) => (
+  <div className={`bus${selectedTripId ? ' active' : ''}`} onClick={() => handleSelectBus(index)}>
+    {busTrips.map((trip) => (
+      <Trip
+        key={`trip-${trip.id}`}
+        handleSelectTrip={handleSelectTrip}
+        selected={trip.id === selectedTripId}
+        trip={trip}
+      />
+    ))}
   </div>
 );
 
