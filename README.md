@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bus Scheduling Challenge
 
-## Available Scripts
+By [Annie Pennell](https://www.linkedin.com/in/anniepennell/) | [anniepennell.com](https://anniepennell.com/)
 
-In the project directory, you can run:
+[View Demo](http://apennell.github.io/bus-schedule)
 
-### `yarn start`
+## Goal
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The goal of this project is to allow a user to create, edit, and view a bus schedule for the 38 Geary bus route.
+Its simple UI shows which trips are currently assigned to each bus, each bus' start and end times, and move trips from one bus to another without creating conflicts.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project meets all requirements and bonus steps, but with extra time I would take these next steps:
+* add basic tests using Jest to ensure it always works as expected
+* improve the responsiveness of the design, which is currently very minimal
+* look into using JS maps or objects, rather than arrays, for the buses and trips to avoid the more complicated lookups I used, which _may_ have been easier with the use of objects (I chose to use arrays for MVP because it seemed simpler for ordering and interating)
+* improve the overall styling of the UI
 
-### `yarn test`
+## Technologies 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This app uses ReactJS, Javascript, CSS, HTML, and JSON, and was bootstrapped using [Create React App](https://github.com/facebookincubator/create-react-app).
 
-### `yarn build`
+## Dependencies
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Node >= 8.1 on your machine--you can use [nvm](https://github.com/creationix/nvm) to easily switch Node versions between different projects.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Clone locally using `git clone https://github.com/apennell/bus-schedule.git` (https) or `git clone git@github.com:apennell/bus-schedule.git` (SSH).
+2. `cd` into `bus-schedule` directory.
+3. Run `yarn install` or `npm install` to install the project's dependencies.
+4. Run `yarn start` or `npm start` to run the app in the development mode.
+5. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+6. To build the app for production and bundle to optimize for best performance, run `yarn build` or `npm run build`.
