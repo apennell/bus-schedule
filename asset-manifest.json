@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bus-schedule/static/css/main.09a7e56a.chunk.css",
+    "main.js": "/bus-schedule/static/js/main.e4ea6679.chunk.js",
+    "main.js.map": "/bus-schedule/static/js/main.e4ea6679.chunk.js.map",
+    "runtime-main.js": "/bus-schedule/static/js/runtime-main.1e400d21.js",
+    "runtime-main.js.map": "/bus-schedule/static/js/runtime-main.1e400d21.js.map",
+    "static/js/2.ea505877.chunk.js": "/bus-schedule/static/js/2.ea505877.chunk.js",
+    "static/js/2.ea505877.chunk.js.map": "/bus-schedule/static/js/2.ea505877.chunk.js.map",
+    "index.html": "/bus-schedule/index.html",
+    "precache-manifest.cb72efc0ebe5fadd15d1c32d7513a7de.js": "/bus-schedule/precache-manifest.cb72efc0ebe5fadd15d1c32d7513a7de.js",
+    "service-worker.js": "/bus-schedule/service-worker.js",
+    "static/css/main.09a7e56a.chunk.css.map": "/bus-schedule/static/css/main.09a7e56a.chunk.css.map",
+    "static/js/2.ea505877.chunk.js.LICENSE.txt": "/bus-schedule/static/js/2.ea505877.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e400d21.js",
+    "static/js/2.ea505877.chunk.js",
+    "static/css/main.09a7e56a.chunk.css",
+    "static/js/main.e4ea6679.chunk.js"
+  ]
+}
