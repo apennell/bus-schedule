@@ -47,9 +47,23 @@ const Schedule = () => {
     setSelectedTripId(selectedTripId === id ? null : id);
   };
 
+  const getTimes = (trips) => (
+    trips.reduce((acc, trip) => (
+      {
+        start: Math.min(acc.start, trip.startTime),
+        end: Math.max(acc.end, trip.endTime),
+      }
+    ), { start: 1440, end: 0 })
+  );
+
   return (
     <div className="container">
       <h1>38 Geary Schedule</h1>
+      <div className="times">
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((time) => (
+          <p style={{ left: `${(time * 60) + 155}px`}}>{time}:00</p>
+        ))}
+      </div>
       {buses.map((bus, index) => (
         <Bus
           index={index}
@@ -58,6 +72,7 @@ const Schedule = () => {
           handleSelectBus={handleSelectBus}
           handleSelectTrip={handleSelectTrip}
           selectedTripId={selectedTripId}
+          times={getTimes(bus)}
         />
       ))}
       {selectedTripId ?

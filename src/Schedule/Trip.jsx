@@ -13,7 +13,7 @@ const propTypes = {
 
 const Trip = ({ handleSelectTrip, selected, trip: { id, startTime, endTime } }) => {
   const style = {
-    left: `${startTime}px`,
+    left: `${startTime + 155}px`,
     width: `${endTime - startTime}px`,
   };
   const tripClass = `trip${selected ? ' active' : ''}`;

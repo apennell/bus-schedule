@@ -1,24 +1,50 @@
 .container {
   position: relative;
-  max-width: 70%;
+  width: 730px;
   margin: 50px auto;
+}
+
+.times {
+  border-bottom: 1px solid #b5b5b5;
+  font-size: 12px;
+  min-height: 30px;
+  padding-left: 145px;
+  position: relative;
+}
+
+.times p {
+  display: inline-block;
+  position: absolute;
 }
 
 .bus {
   border-bottom: 1px solid #b5b5b5;
   display: inline-flex;
-  margin-top: -3px;
   min-height: 40px;
   position: relative;
   width: 100%;
 }
 
-.bus:nth-child(even) {
+.bus:nth-child(odd) {
   background-color: #f9f7f7;
 }
 
 .bus.active:hover {
   cursor: pointer;
+}
+
+.bus-name {
+  align-self: center;
+  border-right: 1px solid #b5b5b5;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 15px;
+  width: 124px;
+}
+
+.bus-name small {
+  font-weight: 300;
+  padding-left: 10px;
 }
 
 .trip {
@@ -39,4 +65,28 @@
 
 .trip.active {
   background-color: #d1d1d1;
+}
+
+@media (max-width: 650px) {
+  .container {
+    min-width: 100%;
+  }
+
+  .times {
+    margin-left: -100px;
+  }
+
+  .bus-name {
+    font-size: 12px;
+    padding: 0 10px;
+    width: 34px
+  }
+
+  .bus-name small {
+    display: none;
+  }
+
+  .trip {
+    margin-left: -115px;
+  }
 }

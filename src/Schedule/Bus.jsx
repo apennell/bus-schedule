@@ -13,14 +13,39 @@ const propTypes = {
   index: PropTypes.number.isRequired,
   handleSelectTrip: PropTypes.func,
   selectedTripId: PropTypes.number,
+  times: PropTypes.shape({
+    end: PropTypes.number,
+    start: PropTypes.number,
+  }),
 };
 
 const defaultProps = {
   selectedTripId: null,
+  times: {},
 };
 
-const Bus = ({ busTrips, index, handleSelectBus, handleSelectTrip, selectedTripId }) => (
+const convertTime = (minsFromMidnight) => {
+  const hour = Math.floor(minsFromMidnight / 60);
+  const minutes = (`0${minsFromMidnight % 60}`).slice(-2);
+  return `${hour}:${minutes}`;
+};
+
+const Bus = ({
+  busTrips,
+  index,
+  handleSelectBus,
+  handleSelectTrip,
+  selectedTripId,
+  times: { end, start },
+}) => (
   <div className={`bus${selectedTripId ? ' active' : ''}`} onClick={() => handleSelectBus(index)}>
+    {busTrips.length ?
+      <p className="bus-name">
+        Bus {index + 1} <small>{convertTime(start)} - {convertTime(end)}</small>
+      </p>
+    :
+      <p className="bus-name">New Bus</p>
+    }
     {busTrips.map((trip) => (
       <Trip
         key={`trip-${trip.id}`}
